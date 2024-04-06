@@ -47,8 +47,8 @@ async function createNewWeb() {
         'X-Slack-No-Retry': 1
     };
 
-    // const model = Math.random() > 0.2 ? 'gpt-3.5-turbo' : 'gpt-4-turbo-preview';
-    const model = 'gpt-4-turbo-preview';
+    const model = Math.random() > 0.4 ? 'gpt-3.5-turbo' : 'gpt-4-turbo-preview';
+    // const model = 'gpt-4-turbo-preview';
     console.log('Model:', model)
 
     const options = {
@@ -57,7 +57,7 @@ async function createNewWeb() {
         body: JSON.stringify({
             model: model,
             max_tokens: 4096,
-            temperature: 0.9,
+            temperature: 1,
             messages: messages
         })
     };
