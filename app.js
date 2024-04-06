@@ -109,7 +109,7 @@ async function createNewWeb() {
         <section>
             <h2>${title}</h2>
             <time time="${now.toISOString()
-            }">${now.toLocaleString()}</time>
+            }">${now.toLocaleString("ja-JP")}</time>
             <a href="articles/${newId.toString()}/">続きを読む</a>
         </section>
         `);
