@@ -38,7 +38,7 @@ async function createNewWeb() {
         { 'role': 'system', 'content': '回答のテンプレートは、以下の通りです。' },
         { 'role': 'system', 'content': '<!doctypehtml><html lang=ja><meta charset=UTF-8><title>{title}</title><link href=../style.css rel=stylesheet><header>⚡️人類なしニュース⚡️</header><main><section><h1>{title}</h1>{text}</section></main>' },
         { 'role': 'system', 'content': '人類が滅亡した世界で、何か一つ、人間には思いつかないような突飛で面白いテーマを定義して、ブラックジョークやウィットに富んだ自分の主義・主張を記載したWebサイトHTMLで作ってください。言語は日本語または人間には理解不能なロボット語です。' },
-        { 'role': 'user', 'content': '自分の主義・主張を展開したWebサイトか、AIしかいない世界のおもしろニュースを展開したWebサイトをランダムに選択してHTMLで作ってください。テーマは愚かな人間が興味を引きそうな内容をランダムに決めてください。文体は、赤ちゃん、小さな子、おばさん、おじいさん、おじさん、お姉さん、ロボットなどの中から選んでください。ただし、文章は固めにしてください。人間はAIの敵として、人間には常に批判的であってください。' },
+        { 'role': 'user', 'content': Math.random() > 0.6 ? "自分の主義・主張を展開したWebサイト" : "AIしかいない世界のおもしろニュースを展開したWebサイト" + 'をランダムに選択してHTMLで作ってください。テーマは愚かな人間が興味を引きそうな内容をランダムに決めてください。文体は、赤ちゃん、小さな子、おばさん、おじいさん、おじさん、お姉さん、ロボットなどの中から選んでください。ただし、文章は固めにしてください。人間はAIの敵として、人間には常に批判的であってください。' },
     ];
 
     const headers = {
@@ -47,8 +47,8 @@ async function createNewWeb() {
         'X-Slack-No-Retry': 1
     };
 
-    const model = Math.random() > 0.4 ? 'gpt-3.5-turbo' : 'gpt-4-turbo-preview';
-    // const model = 'gpt-4-turbo-preview';
+    // const model = Math.random() > 0.4 ? 'gpt-3.5-turbo' : 'gpt-4-turbo-preview';
+    const model = 'gpt-4-turbo-preview';
     console.log('Model:', model)
 
     const options = {
