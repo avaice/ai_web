@@ -17,6 +17,14 @@ header {
 main {
   padding: 20px;
 }
+.thumb {
+  display: block;
+  margin: 20px 0 40px 0;
+  max-width: 400px;
+  width: 100%;
+  border: 2px solid #0f0;
+  box-shadow: 6px 8px 0 rgba(7, 83, 7, 0.432);
+}
 section {
   border: 2px solid #0f0;
   padding: 20px;
