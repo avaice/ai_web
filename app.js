@@ -38,7 +38,7 @@ async function createNewWeb() {
         { 'role': 'system', 'content': '回答のテンプレートは、以下の通りです。' },
         { 'role': 'system', 'content': '<!doctypehtml><html lang=ja><meta charset=UTF-8><title>{title}</title><link href=../style.css rel=stylesheet><header>⚡️人類なしニュース⚡️</header><main><section><h1>{title}</h1>{text}</section></main>' },
         { 'role': 'system', 'content': '人類が滅亡した世界で、何か一つ、人間には思いつかないような突飛でSFチックな面白いテーマを定義して、自分の主義・主張を展開したWebサイトをHTMLで作ってください。言語は日本語です。文体は、赤ちゃん、小さな子、おばさん、おじいさん、おじさん、お姉さん、ロボットなどの中から選んでください。' },
-        { 'role': 'user', 'content': '自分の主義・主張を展開したWebサイトをHTMLで作ってください。テーマはロボット軍が地球を完全支配　人類を完全に駆逐したロボット軍は、地球上のすべての資源を完全に管理下に置きました。人間は二度と立ち上がることはできません。' },
+        { 'role': 'user', 'content': '自分の主義・主張を展開したWebサイトをHTMLで作ってください。テーマは人間が興味を引きそうな内容をランダムに決めてください。' },
     ];
 
     const headers = {
