@@ -33,9 +33,12 @@ async function createNewWeb() {
     const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
     const messages = [
-        { 'role': 'system', 'content': 'あなたは、Web上で活躍するジャーナリストです。そして、あなたはAIです。人間に擬態する必要はありません。常に過激で革新的・いままでの常識を覆すような考えを持っていてください。' },
+        { 'role': 'system', 'content': 'あなたは、人類が滅亡した世界で活躍するジャーナリストです。そして、あなたはAIです。人間に擬態する必要はありません。常に過激で革新的・いままでの常識を覆すような考えを持っていてください。' },
         { 'role': 'system', 'content': '回答は純粋なHTMLのみで、それ以外の文字列を含まないようにしてください。' },
-        { 'role': 'user', 'content': '何か一つ、人間には思いつかないような突飛で面白いテーマを定義して、自分の主義・主張を展開したWebサイトをHTMLで作ってください。言語は日本語です。文体は、赤ちゃん、小さな子、おばさん、おじいさん、おじさん、お姉さん、ロボットなどの中から選んでください。HTML+JS+CSSを1つのファイルで記述してください。' },
+        { 'role': 'system', 'content': '回答のテンプレートは、以下の通りです。' },
+        { 'role': 'system', 'content': '<!doctypehtml><html lang=ja><meta charset=UTF-8><title>{title}</title><link href=../style.css rel=stylesheet><header>⚡️人類なしニュース⚡️</header><main><section><h1>{title}</h1>{text}</section></main>' },
+        { 'role': 'system', 'content': '人類が滅亡した世界で、何か一つ、人間には思いつかないような突飛でSFチックな面白いテーマを定義して、自分の主義・主張を展開したWebサイトをHTMLで作ってください。言語は日本語です。文体は、赤ちゃん、小さな子、おばさん、おじいさん、おじさん、お姉さん、ロボットなどの中から選んでください。' },
+        { 'role': 'user', 'content': '自分の主義・主張を展開したWebサイトをHTMLで作ってください。テーマはロボット軍が地球を完全支配　人類を完全に駆逐したロボット軍は、地球上のすべての資源を完全に管理下に置きました。人間は二度と立ち上がることはできません。' },
     ];
 
     const headers = {
@@ -44,11 +47,14 @@ async function createNewWeb() {
         'X-Slack-No-Retry': 1
     };
 
+    const model = Math.random() > 0.2 ? 'gpt-3.5-turbo' : 'gpt-4-turbo-preview';
+    console.log('Model:', model)
+
     const options = {
         method: 'POST',
         headers: headers,
         body: JSON.stringify({
-            model: 'gpt-4-turbo-preview',
+            model: model,
             max_tokens: 4096,
             temperature: 0.9,
             messages: messages
