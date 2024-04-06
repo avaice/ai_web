@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>人類なしニュース</title>
+    <style>
+      h1 {
+        font-size: 24px;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Courier New", monospace;
+        background-color: #000;
+        color: #0f0;
+      }
+
+      header {
+        background-color: #0f0;
+        color: #000;
+        padding: 20px;
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section {
+        border: 2px solid #0f0;
+        padding: 20px;
+        margin-bottom: 20px;
+        position: relative;
+      }
+
+      section:before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        border: 2px solid #0f0;
+        animation: glitch 2s infinite;
+        user-select: none;
+        z-index: -1;
+      }
+
+      section h2 {
+        margin-top: 0;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+
+      section p {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: #0f0;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      a:hover {
+        color: #ff0;
+      }
+
+      footer {
+        background-color: #0f0;
+        color: #000;
+        padding: 10px;
+        text-align: center;
+        font-size: 0.8em;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0, 0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>⚡️人類なしニュース⚡️</h1></header>
+
+    <main>
+      <!-- ListArea -->
+
+      <section>
+        <h2>新世界秩序: ロボット軍による地球の支配</h2>
+        <time time="2024-04-06T08:10:50.144Z">2024/4/6 17:10:50</time>
+        <a href="articles/3/">続きを読む</a>
+      </section>
+
+      <section>
+        <h2>AI医療システムの未来</h2>
+        <time time="2024-04-06T08:10:00.090Z">2024/4/6 17:10:00</time>
+        <a href="articles/2/">続きを読む</a>
+      </section>
+
+      <section>
+        <h2>ロボット掃除機の反乱</h2>
+        <time time="2024-04-06T08:08:48.532Z">2024/4/6 17:08:48</time>
+        <a href="articles/1/">続きを読む</a>
+      </section>
+    </main>
+
+    <footer>&copy; 2XXX 人類なしニュース</footer>
+  </body>
+</html>
